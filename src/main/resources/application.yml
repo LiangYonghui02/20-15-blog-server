@@ -1,0 +1,43 @@
+#==============================数据库相关==================================
+server:
+  port: 8000
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/fafy-blog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: zqss02
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  #============================redis===============================
+  redis:
+    host: localhost
+    port: 6379
+  #============================kafka===============================
+#  kafka:
+#    bootstrap-servers: localhost:9092
+#    consumer:
+#      group-id: blog-consumer-group
+#      enable-auto-commit: true
+#      auto-commit-interval: 3000
+#==============================mybatis相关==================================
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+
+#==============================邮件相关==================================
+email:
+  # 邮件服务器的SMTP地址，可选，默认为smtp.<发件人邮箱后缀>
+  host: smtp.yeah.net
+  # 邮件服务器的SMTP端口，可选，默认25
+  port: 25
+  # 发件人（必须正确，否则发送失败）
+  from: hutool@yeah.net
+  # 用户名，默认为发件人邮箱前缀
+  user: hutool
+  # 密码（注意，某些邮箱需要为SMTP服务单独设置授权码，详情查看相关帮助）
+  pass: q1w2e3
+
+
+
+
+
+
+

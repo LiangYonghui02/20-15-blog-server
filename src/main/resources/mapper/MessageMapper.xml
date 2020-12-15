@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liang.mapper.MessageMapper">
+
+    <select id="selectLastMsgDate" resultType="java.lang.String">
+        SELECT
+        MAX(create_time)
+        FROM
+        message
+        WHERE
+        to_id = #{userId}
+        AND
+        LENGTH(conversation_id) > 10
+        GROUP BY
+        conversation_id
+    </select>
+</mapper>
